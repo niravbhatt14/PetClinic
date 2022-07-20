@@ -7,7 +7,7 @@
             echo "deleteing previous application deployment"
             kubectl delete deployment `kubectl get deployment | grep -v NAME | awk '{print $1}' | grep petclinic`
             echo "creating new application deployment"
-            kubectl create deployment petclinic --image=niravbhatt14/petclinic:{{ $BUILD_NUMBER }}
+            kubectl create deployment petclinic --image=niravbhatt14/petclinic:{{ build }}
          else 
             echo "Deploying petclinic Application"
             kubectl create deployment petclinic --image=niravbhatt14/petclinic:{{ build }}
