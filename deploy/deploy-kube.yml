@@ -10,7 +10,7 @@
             kubectl create deployment petclinic --image=niravbhatt14/petclinic:{{ build }}
          else 
             echo "Deploying petclinic Application"
-            kubectl create deployment petclinic --image=niravbhatt14/petclinic:{{ build }}
+            kubectl create deployment petclinic --image=niravbhatt14/petclinic:{{ $BUILD_NUMBER }}
          fi
     - name: deploying service
       shell: |
